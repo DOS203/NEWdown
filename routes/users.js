@@ -98,7 +98,7 @@ router.post('/register', (req, res) => {
   }
 });
 
-//Edit
+//Edit Profile
 router.put('/:id', ensureAuthenticated, (req, res) => {
   User.findOne({
     _id: req.params.id
@@ -116,7 +116,7 @@ router.put('/:id', ensureAuthenticated, (req, res) => {
   });
 });
 
-// Delete Idea
+// Delete Account
 router.delete('/:id', ensureAuthenticated, (req, res) => {
   User.remove({_id: req.params.id})
     .then(() => {
