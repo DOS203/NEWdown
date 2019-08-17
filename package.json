@@ -1,7 +1,7 @@
 {
-  "name": "vidjot",
+  "name": "DOS203",
   "version": "1.0.0",
-  "description": "App to create video ideas",
+  "description": "APP to create Login",
   "main": "app.js",
   "scripts": {
     "start": "node app.js"
