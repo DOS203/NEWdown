@@ -1,0 +1,97 @@
+<!-- <!DOCTYPE html>
+<html>
+    <head>
+        <title>Page Title</title>
+    </head>
+    <body> -->
+<div class="row">
+    <fieldset>
+        <legend>Score Input</legend>
+        <form id="form">
+            <input type="text" id="id" placeholder="Id" autocomplete="off" />
+            <input type="text" id="subject" placeholder="Subject" autocomplete="off" />
+            <input type="number" id="mark" placeholder="Score" autocomplete="off" /><br />
+            <input type="submit" value="Update" />
+            <input type="reset" value="Reset" />
+        </form>
+    </fieldset>
+    <div id="result-container"></div>
+
+    <script id="resultTemplate" type="text/x-handlebars-template">
+        <table id="table">
+            <tr>
+                <th>Student ID</th>
+                <th>Subject</th>
+                <th>Score</th>
+            </tr>
+            {{#each studentResults}}
+            <tr>
+                <td>{{id}}</td>
+                <td>{{subject}}</td>
+                <td>{{mark}}</td>
+            </tr>
+            {{/each}}
+        </table>
+    </script>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.min.js"></script>
+    <script>
+        var data = {
+                studentResults: [
+                {
+                    id: 1,
+                    subject: 'English',
+                    mark: 80
+                },
+                {
+                    id: 2,
+                    subject: 'French',
+                    mark: 70
+                },
+                {
+                    id: 3,
+                    subject: 'Chinese',
+                    mark: 90
+                }
+            ]
+        }
+
+        // Handlebars hanbling
+
+        function createHTML(studentData) {
+            var rawTemplate = document.getElementById("resultTemplate").innerHTML
+            var compiledTemplate = Handlebars.compile(rawTemplate)
+            var generatedHTML = compiledTemplate(studentData)
+
+            var resultContainer = document.getElementById("result-container")
+            resultContainer.innerHTML = generatedHTML
+
+        }
+
+        createHTML(data)
+
+        function UpdateData(id, subject, mark) {
+            var newStudent = {}
+            newStudent.id = id
+            newStudent.subject = subject
+            newStudent.mark = mark
+            data.studentResults.push(newStudent)
+            createHTML(data)
+        }
+
+        // Update data from form
+
+        var form = document.getElementById("form")
+        form.addEventListener("submit", function(e) {
+             UpdateData( document.getElementById('id').value,
+                document.getElementById('subject').value,
+                document.getElementById('mark').value );
+
+            e.preventDefault();
+        }, false)
+
+    </script>
+</div>
+    <!-- </body>
+</html> -->
