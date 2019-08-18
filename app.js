@@ -86,7 +86,7 @@ app.get('/courier', (req, res) => {
   res.render('courier');
 });
 
-app.get('/deiveryDT', (req, res) => {
+app.get('/deliveryDT', (req, res) => {
   res.render('deliveryDT');
 });
 
