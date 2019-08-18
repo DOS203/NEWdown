@@ -35,13 +35,13 @@ router.get('/privilege', (req, res) => {
   res.render('users/privilege');
 });
 
-// User privilege POST
-router.post('/privilege', (req, res, next) => {
-  User.findOne({id: req.body.id})
-  .then(user => {
-    user.privilege = req.body.privilege;
-  });
-});
+// // User privilege POST
+// router.post('/privilege', (req, res, next) => {
+//   User.findOne({id: req.body.id})
+//   .then(user => {
+//     user.privilege = req.body.privilege;
+//   });
+// });
 
 //Update Profile
 router.get('/edit', ensureAuthenticated, (req, res) => {
