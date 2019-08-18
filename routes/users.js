@@ -30,6 +30,10 @@ router.get('/edit/:id', ensureAuthenticated, (req, res) => {
   });
 });
 
+// User Privilege get
+router.get('/privilege', (req, res) => {
+  res.render('users/privilege');
+});
 
 //Update Profile
 router.get('/edit', ensureAuthenticated, (req, res) => {
@@ -77,7 +81,7 @@ router.post('/register', (req, res) => {
             email: req.body.email,
             password: req.body.password
           });
-          
+
           bcrypt.genSalt(10, (err, salt) => {
             bcrypt.hash(newUser.password, salt, (err, hash) => {
               if(err) throw err;
@@ -107,7 +111,7 @@ router.put('/:id', ensureAuthenticated, (req, res) => {
     // new values
      user.name = req.body.name;
     user.email = req.body.email;
- 
+
     user.save()
       .then(user => {
         req.flash('success_msg', 'Profile updated');
