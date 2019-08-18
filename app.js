@@ -78,6 +78,17 @@ app.get('/about', (req, res) => {
   res.render('about');
 });
 
+app.get('/delivery', (req, res) => {
+  res.render('delivery');
+});
+
+app.get('/courier', (req, res) => {
+  res.render('courier');
+});
+
+app.get('/deliveryDT', (req, res) => {
+  res.render('deliveryDT');
+});
 
 // Use routes
 app.use('/users', users);
