@@ -18,7 +18,15 @@ const UserSchema = new Schema({
   date: {
     type: Date,
     default: Date.now
-  }
+  },
+  privilege:{
+    type: String,
+    required: false
+  },
+  id:{
+    type: String,
+    required: false
+  },
 });
 
 mongoose.model('users', UserSchema);
