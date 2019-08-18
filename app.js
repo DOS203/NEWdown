@@ -14,6 +14,7 @@ const db = require('./config/database');
 
 // Load routes
 const users = require('./routes/users');
+const delivery = require('./routes/delivery');
 
 // Passport Config
 require('./config/passport')(passport);
@@ -79,9 +80,7 @@ app.get('/about', (req, res) => {
 });
 
 // delivery route
-app.get('/delivery', (req, res) => {
-  res.render('delivery');
-});
+app.use('/delivery', delivery);
 
 // Use routes
 app.use('/users', users);
