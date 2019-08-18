@@ -80,7 +80,9 @@ app.get('/about', (req, res) => {
 });
 
 // delivery route
-app.use('/delivery', delivery);
+app.get('/delivery/delivery', (req, res) => {
+  res.render('delivery');
+});
 
 // Use routes
 app.use('/users', users);
