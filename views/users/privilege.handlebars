@@ -1,88 +1,56 @@
 <div class="row">
-  <fieldset>
-        <legend>Score Input</legend>
-        <form id="form">
-            <input type="text" id="id" placeholder="Id" autocomplete="off" />
-            <input type="text" id="subject" placeholder="Subject" autocomplete="off" />
-            <input type="number" id="mark" placeholder="Score" autocomplete="off" /><br />
-            <input type="submit" value="Update" />
-            <input type="reset" value="Reset" />
-        </form>
-    </fieldset>
-    <div id="result-container"></div>
-
-    <script id="resultTemplate" type="text/x-handlebars-template">
-        <table id="table">
-            <tr>
-                <th>Student ID</th>
-                <th>Subject</th>
-                <th>Score</th>
-            </tr>
-            {{#each studentResults}}
-            <tr>
-                <td>{{id}}</td>
-                <td>{{subject}}</td>
-                <td>{{mark}}</td>
-            </tr>
-            {{/each}}
-        </table>
-    </script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.min.js"></script>
-    <script>
-        var data = {
-                studentResults: [
-                {
-                    id: 1,
-                    subject: 'English',
-                    mark: 80
-                },
-                {
-                    id: 2,
-                    subject: 'French',
-                    mark: 70
-                },
-                {
-                    id: 3,
-                    subject: 'Chinese',
-                    mark: 90
-                }
-            ]
-        }
-
-        // Handlebars hanbling
-
-        function createHTML(studentData) {
-            var rawTemplate = document.getElementById("resultTemplate").innerHTML
-            var compiledTemplate = Handlebars.compile(rawTemplate)
-            var generatedHTML = compiledTemplate(studentData)
-
-            var resultContainer = document.getElementById("result-container")
-            resultContainer.innerHTML = generatedHTML
-
-        }
-
-        createHTML(data)
-
-        function UpdateData(id, subject, mark) {
-            var newStudent = {}
-            newStudent.id = id
-            newStudent.subject = subject
-            newStudent.mark = mark
-            data.studentResults.push(newStudent)
-            createHTML(data)
-        }
-
-        // Update data from form
-
-        var form = document.getElementById("form")
-        form.addEventListener("submit", function(e) {
-             UpdateData( document.getElementById('id').value,
-                document.getElementById('subject').value,
-                document.getElementById('mark').value );
-
-            e.preventDefault();
-        }, false)
-
-    </script>
+  <style type="text/css">
+      .tg  {border-collapse:collapse;border-spacing:0;border-color:#ccc;}
+      .tg td{padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#fff;}
+      .tg th{font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#f0f0f0;}
+      .tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:top}
+      .tg .tg-abip{background-color:#f9f9f9;border-color:inherit;text-align:center;vertical-align:top}
+      .tg .tg-dzk6{background-color:#f9f9f9;text-align:center;vertical-align:top}
+  </style>
+<!--   <form action="/users/success" method="get"> -->
+    <table class="tg">
+      <tr>
+        <th class="tg-c3ow" colspan="5">Users</th>
+      </tr>
+      <tr>
+        <td class="tg-abip">ID</td>
+        <td class="tg-abip">First name</td>
+        <td class="tg-abip">Last name</td>
+        <td class="tg-abip">Email</td>
+        <td class="tg-abip">Privilege level</td>
+      </tr>
+      <tr>
+        <td class="tg-c3ow">3847582893</td>
+        <td class="tg-c3ow">Luke</td>
+        <td class="tg-c3ow">Smith</td>
+        <td class="tg-c3ow">lukesmith1@gmail.com</td>
+        <td class="tg-c3ow">
+          <select>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td class="tg-dzk6">6547893126</td>
+        <td class="tg-dzk6">Mike</td>
+        <td class="tg-dzk6">Nolan</td>
+        <td class="tg-dzk6">mikenolan8@gmail.com</td>
+        <td class="tg-dzk6">
+          <select>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+          </select>
+        </td>
+      </tr>
+    </table>
+    <button type="submit" class="btn btn-primary">Save Changes</button>
+    <a href="/">
+      <button class="btn btn-primary">Home</button>
+    </a> 
+<!--    </form> -->
 </div>

@@ -30,7 +30,7 @@ router.get('/edit/:id', ensureAuthenticated, (req, res) => {
   });
 });
 
-// User Privilege Route
+// User Privilege get
 router.get('/privilege', (req, res) => {
   res.render('users/privilege');
 });
