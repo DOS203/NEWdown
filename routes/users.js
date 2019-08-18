@@ -24,6 +24,10 @@ router.get('/payment', (req, res) => {
   res.render('users/payment');
 });
 
+// User Payment POST
+router.post('/payment', (req, res, next) => {
+});
+
 //User Update Route
 router.get('/edit/:id', ensureAuthenticated, (req, res) => {
   User.findOne({
