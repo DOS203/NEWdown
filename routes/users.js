@@ -18,6 +18,12 @@ router.get('/login', (req, res) => {
 router.get('/register', (req, res) => {
   res.render('users/register');
 });
+
+// User Payment Route
+router.get('/payment', (req, res) => {
+  res.render('users/payment');
+});
+
 //User Update Route
 router.get('/edit/:id', ensureAuthenticated, (req, res) => {
   User.findOne({
