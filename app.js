@@ -78,6 +78,10 @@ app.get('/about', (req, res) => {
   res.render('about');
 });
 
+// delivery route
+app.get('/delivery', (req, res) => {
+  res.render('delivery');
+});
 
 // Use routes
 app.use('/users', users);
