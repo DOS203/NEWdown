@@ -26,6 +26,8 @@ router.get('/payment', (req, res) => {
 
 // User Payment POST
 router.post('/payment', (req, res, next) => {
+  req.flash('success_msg', 'Payment Successful');
+  res.redirect('/');
 });
 
 //User Update Route
