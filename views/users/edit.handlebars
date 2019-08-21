@@ -13,9 +13,11 @@
           <label for="email">Email</label>
           <input type="email" name="email" class="form-control" value="{{user.email}}" required>
         </div>
-          <button type="submit" class="btn btn-primary">Submit</button>
+    
+        <button type="submit" class="btn btn-primary">Submit</button>
+
       </form>
-        <br>
+
        <form method="post" action="/users/{{user.id}}?_method=DELETE">
       <input type="hidden" name="_method" value="DELETE">
       <input type="submit" class="btn btn-danger btn-block" value="Delete">
