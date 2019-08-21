@@ -4,7 +4,7 @@
       <img class="logo" src="/img/Update.png">
       <h3 class="text-center">Update</h3>
       <form action="/users/{{user.id}}?_method=PUT" method="post">
-      <input type="hidden" name="_method" value="PUT"
+      <input type="hidden" name="_method" value="PUT">
         <div class="form-group">
           <label for="name">Name</label>
           <input type="text"  class="form-control" name="name" value="{{user.name}}" required>
@@ -13,9 +13,7 @@
           <label for="email">Email</label>
           <input type="email" name="email" class="form-control" value="{{user.email}}" required>
         </div>
-    
-        <button type="submit" class="btn btn-primary">Submit</button>
-
+          <button type="submit" class="btn btn-primary">Submit</button>
       </form>
 
        <form method="post" action="/users/{{user.id}}?_method=DELETE">
