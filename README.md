@@ -1,4 +1,4 @@
 # NEWdown
 Testing new users
 
-Testing github integration
+Testing github, slack , heroku

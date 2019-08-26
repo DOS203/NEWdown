@@ -84,7 +84,8 @@ router.post('/register', (req, res) => {
   if(errors.length > 0){
     res.render('users/register', {
       errors: errors,
-      name: req.body.name,
+      firstname: req.body.firstname,
+      lastname: req.body.lastname,
       email: req.body.email,
       password: req.body.password,
       password2: req.body.password2
@@ -97,7 +98,8 @@ router.post('/register', (req, res) => {
           res.redirect('/users/register');
         } else {
           const newUser = new User({
-            name: req.body.name,
+            firstname: req.body.firstname,
+            lastname: req.body.lastname,
             email: req.body.email,
             password: req.body.password
           });
@@ -129,7 +131,8 @@ router.put('/:id', ensureAuthenticated, (req, res) => {
   })
   .then(user => {
     // new values
-     user.name = req.body.name;
+    user.firstname = req.body.firstname,
+    user.lastname = req.body.lastname,
     user.email = req.body.email;
 
     user.save()
