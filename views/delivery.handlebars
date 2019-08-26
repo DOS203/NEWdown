@@ -1,3 +1,31 @@
+var space = " ";
+var slash = "/";
+var comma = ", ";
+var address;
+var yA = "Your Address: ";
+var used;
+
+window.onload=function(){
+  document.getElementById("formSubmit").style.display='none';
+  //document.getElementById("radioForm").onsubmit = pageLoad();
+};
+
+function showData() {
+    if (document.getElementById("appNum").value != "") {
+      address = document.getElementById("appNum").value  + slash  + document.getElementById("streetNum").value  + space  + document.getElementById("streetName").value  + comma  + document.getElementById("suburbName").value  + comma + document.getElementById("postcodeNum").value + comma + document.getElementById("state").value;
+      document.getElementById('display').innerHTML = address;
+      document.getElementById('yourAddress').innerHTML = yA;
+      document.getElementById("formSubmit").style.display='block';
+
+    }
+    else {
+      address = document.getElementById("streetNum").value  + space  + document.getElementById("streetName").value  + comma  + document.getElementById("suburbName").value  + comma + document.getElementById("postcodeNum").value + comma + document.getElementById("state").value;
+      document.getElementById('display').innerHTML = address;
+      document.getElementById('yourAddress').innerHTML = yA;
+      document.getElementById("formSubmit").style.display='block';
+    }
+} 
+ 
  <center>
  <h1>
   Delivery System Prototype
